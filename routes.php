@@ -1,27 +1,27 @@
 <?php
 // routes.php
 
-require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/TrainersController.php';
 
-$controller = new UserController();
+$controller = new TrainersController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-if ($url == '/user/index' || $url == '/') {
+if ($url == '/trainers/index' || $url == '/') {
     $controller->index();
-} elseif ($url == '/user/create' && $requestMethod == 'GET') {
+} elseif ($url == '/trainers/create' && $requestMethod == 'GET') {
     $controller->create();
-} elseif ($url == '/user/store' && $requestMethod == 'POST') {
+} elseif ($url == '/trainers/store' && $requestMethod == 'POST') {
     $controller->store();
-} elseif (preg_match('/\/user\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $controller->edit($userId);
-} elseif (preg_match('/\/user\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
-    $userId = $matches[1];
-    $controller->update($userId, $_POST);
-} elseif (preg_match('/\/user\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $controller->delete($userId);
+} elseif (preg_match('/\/trainers\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $id_pelatih = $matches[1];
+    $controller->edit($id_pelatih);
+} elseif (preg_match('/\/trainers\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
+    $id_pelatih = $matches[1];
+    $controller->update($id_pelatih, $_POST);
+} elseif (preg_match('/\/trainers\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $id_pelatih = $matches[1];
+    $controller->delete($id_pelatih);
 } else {
     http_response_code(404);
     echo "404 Not Found";
