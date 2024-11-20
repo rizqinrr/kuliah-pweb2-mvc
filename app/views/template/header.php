@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container-fluid">
@@ -14,3 +16,9 @@
         </div>
     </nav>
     <div class="container my-4">
+        <ul>
+            <li><a href="/members">Members</a></li>
+            <li><a href="/trainers">Trainers</a></li>
+            <li><a href="/attendance">Attendance</a></li>
+            <li><a href="/WorkoutClass">Workout Classes</a></li>
+        </ul>

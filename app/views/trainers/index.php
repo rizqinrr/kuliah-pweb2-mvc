@@ -1,7 +1,3 @@
-<?php
-// Include header template
-include __DIR__ . '/../template/header.php'; // Path absolut
-?>
 
 <!-- Konten Halaman -->
 <div class="container mt-5">
@@ -41,8 +37,3 @@ include __DIR__ . '/../template/header.php'; // Path absolut
         </table>
     </div>
 </div>
-
-<?php
-// Include footer template
-include __DIR__ . '/../template/footer.php'; // Path absolut
-?>
