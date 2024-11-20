@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Sistem Manajemen Gym</a>
+            <a class="navbar-brand" href="#">SISTEM MANAJEMEN GYM</a>
         </div>
     </nav>
     <div class="container my-4">
