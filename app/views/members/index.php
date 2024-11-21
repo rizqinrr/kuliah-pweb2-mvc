@@ -1,4 +1,5 @@
-<!-- app/views/user/index.php -->
+<!-- app/views/member/index.php -->
+
 <body>
 <div class="container mt-5">
    
@@ -37,3 +38,4 @@
     </table>
 </div>
 </body>
+

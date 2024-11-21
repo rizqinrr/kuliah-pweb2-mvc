@@ -1,5 +1,5 @@
 <?php
-// app/models/User.php
+
 require_once '../config/database.php';
 
 class Attendance {
@@ -9,6 +9,8 @@ class Attendance {
         $this->db = (new Database())->connect();
     }
 
+    // Mengambil semua data attendance dengan informasi kelas
+
     public function getAllAttendance() {
         $query = $this->db->query("SELECT attendance.*, workout_classes.nama_kelas as kelas
         FROM attendance
@@ -16,11 +18,20 @@ class Attendance {
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
     public function find($id_attendance) {
         $query = $this->db->prepare("SELECT * FROM attendance WHERE id_attendance = :id_attendance");
         $query->bindParam(':id_attendance', $id_attendance, PDO::PARAM_INT);
         $query->execute();
         return $query->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+    // Menambahkan metode untuk mengambil daftar kelas (untuk combobox)
+    public function getAllClasses() {
+        // Mengambil semua kelas untuk digunakan pada combobox
+        $query = $this->db->query("SELECT id_kelas, nama_kelas FROM workout_classes");
+        return $query->fetchAll(PDO::FETCH_ASSOC); // Mengembalikan data dalam bentuk array asosiatif
     }
 
     public function add($anggota_yang_hadir, $tanggal, $id_kelas) {
@@ -50,4 +61,5 @@ class Attendance {
         $stmt->bindParam(':id_attendance', $id_attendance);
         return $stmt->execute();
     }
+
 }
