@@ -1,13 +1,42 @@
-<!-- app/views/user/create.php -->
-<h2>Tambah Pengguna Baru</h2>
-<form action="/WorkoutClass/store" method="POST">
-    <label for="nama_kelas">Nama Kelas:</label>
-    <input type="text" name="nama_kelas" id="nama_kelas" required>
-    <label for="waktu">Waktu:</label>
-    <input type="time" name="waktu" id="waktu" required>
-    <label for="id_pelatih">ID Pelatih:</label>
-    <input type="integer" name="id_pelatih" id="id_pelatih" required>
-    <label for="kuota">Kuota:</label>
-    <input type="integer" name="kuota" id="kuota" required>
-    <button type="submit">Simpan</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Pengguna Baru</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Tambah Pengguna Baru</h2>
+        <form action="/WorkoutClass/store" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="nama_kelas" class="form-label">Nama Kelas:</label>
+                <input type="text" name="nama_kelas" id="nama_kelas" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="waktu" class="form-label">Waktu:</label>
+                <input type="time" name="waktu" id="waktu" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_pelatih" class="form-label">ID Pelatih:</label>
+                <select name="id_pelatih" id="id_pelatih">
+                        <option value="">Pilih Pelatih</option>
+                    <?php foreach ($pelatih as $index => $trainer): ?>
+                        <option value="<?= $trainer['id_pelatih'] ?>"><?= $trainer['nama_pelatih']?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="kuota" class="form-label">Kuota:</label>
+                <input type="number" name="kuota" id="kuota" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="/WorkoutClass/index" class="btn btn-secondary">Kembali</a>
+        </form>
+    </div>
+
+</body>
+</html>
+
