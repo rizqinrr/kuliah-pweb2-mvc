@@ -12,7 +12,7 @@ class AttendanceController {
         $this->workoutClassModel = new WorkoutClass(); // Inisialisasi model workout class
     }
 
-    // Menampilkan data attendance
+
     public function index() {
         $attendance = $this->attendanceModel->getAllAttendance();
         require_once '../app/views/attendance/index.php';
@@ -27,15 +27,13 @@ class AttendanceController {
         require_once '../app/views/attendance/create.php';
     }
 
-    // Menyimpan data attendance ke database
+
     public function store() {
         $anggota_yang_hadir = $_POST['anggota_yang_hadir'];
         $tanggal = $_POST['tanggal'];
         $id_kelas = $_POST['id_kelas'];
-
         // Panggil method add() dari model Attendance untuk menyimpan data
         $this->attendanceModel->add($anggota_yang_hadir, $tanggal, $id_kelas);
-
         // Redirect ke halaman daftar attendance
         header('Location: /attendance/index');
     }
@@ -49,20 +47,22 @@ class AttendanceController {
     
 
     // Memproses permintaan update attendance
+      // Process the update request
     public function update($id_attendance, $data) {
         $updated = $this->attendanceModel->update($id_attendance, $data);
         if ($updated) {
-            header("Location: /attendance/index"); // Redirect ke daftar attendance
+            header("Location: /attendance/index"); // Redirect to user list
         } else {
             echo "Failed to update attendance.";
         }
     }
 
-    // Memproses permintaan untuk menghapus data attendance
+
+    // Process delete request
     public function delete($id_attendance) {
         $deleted = $this->attendanceModel->delete($id_attendance);
         if ($deleted) {
-            header("Location: /attendance/index"); // Redirect ke daftar attendance
+            header("Location: /attendance/index"); // Redirect to user list
         } else {
             echo "Failed to delete attendance.";
         }
