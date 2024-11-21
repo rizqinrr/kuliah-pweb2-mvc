@@ -1,0 +1,11 @@
+/* Styling untuk halaman Home */
+.home-background {
+    background: url('/public/images/background.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh; /* Full height untuk tampilan */
+    color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
