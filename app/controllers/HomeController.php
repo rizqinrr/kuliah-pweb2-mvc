@@ -1,12 +1,8 @@
 <?php
-// app/controllers/MembersController.php
-
 class HomeController {
-private $home;
-
-    public function __construct()
-    {
-      require_once '../app/views/home/index.php';
+    public function index() {
+        // Memuat view untuk halaman Home
+        require_once '../app/views/home/index.php';
     }
-
 }
+?>

@@ -1,5 +1,6 @@
-</div> <!-- End Container -->
-    <footer class="text-center mt-4">
+
+</div class="mb-1"> <!-- End Container -->
+<footer class="text-center mt-auto py-3 bg-light">
         <p>&copy; 2024 MVC App. All rights reserved.</p>
     </footer>
     <!-- Bootstrap JS -->
