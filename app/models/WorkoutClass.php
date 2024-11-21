@@ -10,10 +10,13 @@ class WorkoutClass {
     }
 
     public function getAllClasses() {
-        $query = $this->db->query("SELECT workout_classes.*, trainers.nama_pelatih as pelatih 
-                  FROM workout_classes 
-                  LEFT JOIN trainers ON workout_classes.id_pelatih = trainers.id_pelatih");
+        $query = $this->db->query("SELECT * FROM  workout_classes");
         return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    public function getAllTrainers() {
+        $query = $this->db->query("SELECT id_pelatih, nama_pelatih FROM trainers");
+         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function find($id_kelas) {

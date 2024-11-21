@@ -6,10 +6,13 @@
         <h2 class="mb-4">Tambah Kehadiran Member</h2>
         <form action="/attendance/store" method="POST" class="needs-validation" novalidate>
             <div class="mb-3">
-                <label for="anggota_yang_hadir" class="form-label">Anggota Yang Hadir:</label>
-                <input type="int" class="form-control" name="anggota_yang_hadir" id="anggota_yang_hadir" required>
+                <label for="anggota_yang_hadir" class="form-label">Jumlah Anggota Yang Hadir:</label>
+                <div class="input-group">
+                <input type="number" class="form-control" name="anggota_yang_hadir" id="anggota_yang_hadir" required>
                 <div class="invalid-feedback">
                     Masukkan jumlah anggota yang hadir.
+                </div>
+                <span class="input-group-text">orang</span>
                 </div>
             </div>
             <div class="mb-3">
