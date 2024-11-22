@@ -41,14 +41,37 @@ class TrainersController {
             echo "Failed to update trainers.";
         }
     }
-
-    // Process delete request
     public function delete($id_pelatih) {
-        $deleted = $this->trainersModel->delete($id_pelatih);
-        if ($deleted) {
-            header("Location: /trainers/index"); // Redirect to trainers list
+        // Cek apakah data terkait dengan tabel workout_classes
+        $isUseInWorkoutClass = $this->trainersModel->checkIfTrainersInWorkoutClass($id_pelatih);
+
+        if ($isUseInWorkoutClass > 0) {
+            // Data ada di tabel workout_classes
+            echo "
+            <script>
+                alert('Data tidak dapat dihapus karena terkait dengan tabel lain');
+                window.location.href = '/trainers/index';
+            </script>";
         } else {
-            echo "Failed to delete trainers.";
+            // Hapus data dari tabel trainers
+            $deleted = $this->trainersModel->delete($id_pelatih);
+            if ($deleted) {
+                // Data berhasil dihapus
+                echo "
+                <script>
+                    alert('Data berhasil dihapus.');
+                    window.location.href = '/trainers/index';
+                </script>";
+            } else {
+                // Gagal menghapus data
+                echo "
+                <script>
+                    alert('Gagal menghapus data.');
+                    window.location.href = '/trainers/index';
+                </script>";
+            }
         }
     }
+
+   
 }

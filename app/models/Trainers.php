@@ -44,7 +44,26 @@ class Trainers {
     public function delete($id_pelatih) {
         $query = "DELETE FROM trainers WHERE id_pelatih = :id_pelatih";
         $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':id_pelatih', $id_pelatih);
+        $stmt->bindParam(':id_pelatih', $id_pelatih, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    public function checkIfTrainersInWorkoutClass($id_pelatih) {
+        $query = "SELECT COUNT(*) FROM workout_classes WHERE id_pelatih = :id_pelatih";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id_pelatih', $id_pelatih, PDO::PARAM_INT);
+        $stmt->execute();
+
+        //ambil hasilnya
+        $count = $stmt->fetchColumn();
+
+        if($count > 0){
+            return 1;
+        }else{
+            return 0;
+
+    }
+    }
+   
 }
