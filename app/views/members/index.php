@@ -3,7 +3,9 @@
 <body>
 <div class="container mt-5">
    
+
     <h2 class="text-center text-dark mb-4">Daftar Members Gym</h2>
+
 
     <div class="text-start mb-3">
         <a href="/members/create" class="btn btn-outline-primary">Tambah Member Baru</a>
@@ -17,6 +19,7 @@
                 <th>Usia</th>
                 <th>Jenis Kelamin</th>
                 <th>Paket Langganan</th>
+
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -40,6 +43,7 @@
                         <td colspan="5" class="text-center">Tidak Ada Data Members Gym</td>
                     </tr>
             <?php endif; ?>
+
         </tbody>
     </table>
 </div>

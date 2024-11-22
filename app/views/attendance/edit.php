@@ -11,6 +11,7 @@
             <div class="mb-3">
                 <label for="anggota_yang_hadir" class="form-label">Anggota Yang Hadir:</label>
                 <input type="number" class="form-control" id="anggota_yang_hadir" name="anggota_yang_hadir"  
+
                        value="<?php echo htmlspecialchars($attendance['anggota_yang_hadir']); ?>" required>
                 <div class="invalid-feedback">
                     Masukkan jumlah anggota yang hadir.
@@ -29,7 +30,9 @@
 
             <!-- Combobox untuk memilih kelas -->
             <div class="mb-3">
+
                 <label for="id_kelas" class="form-label">Nama Kelas:</label>
+
                 <select class="form-control" id="id_kelas" name="id_kelas" required>
                     <option value="" disabled>Pilih Kelas</option>
                     <?php foreach ($classes as $class): ?>
@@ -56,6 +59,7 @@
         </div>
     </form>
                     </div>
+
     </div>
 </body>
 </html>

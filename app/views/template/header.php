@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Management Gym</title>
+
   <!-- Link Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/style.css">
@@ -21,6 +22,7 @@
     </style>
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5 px-4">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Gym Management</a>
@@ -45,6 +47,7 @@
     <a class="btn btn-primary mx-1" href="/WorkoutClass">Workout Class</a>
   </li>
 </ul>
+
 
       </div>
     </div>

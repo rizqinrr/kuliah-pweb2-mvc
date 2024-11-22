@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container mt-5">
+
         <h2 class="mb-4 text-center">Jadwal Workout</h2>
         <a href="/WorkoutClass/create" class="btn btn-outline-primary mb-3">Tambahkan Jadwal</a>
         <div class="table-responsive">
@@ -17,7 +18,7 @@
                 <thead class="table-dark">
                     <tr class="text-center">
                         <th>No</th>
-                        <th>Nama Kelas</th>
+         <th>Nama Kelas</th>
                         <th>Waktu</th>
                         <th>ID Pelatih</th>
                         <th>Kuota</th>
@@ -25,6 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     <?php if (!empty($classes)): ?>
                     <?php foreach ($classes as $index => $user): ?>
                         <tr>
@@ -46,6 +48,7 @@
                         <td colspan="5" class="text-center">Tidak Ada Data Jadwal Workout</td>
                     </tr>
                     <?php endif; ?>
+
                 </tbody>
             </table>
         </div>

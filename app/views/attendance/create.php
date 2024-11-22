@@ -1,3 +1,4 @@
+
 <body>
 <div class="container mt-2">
     <div class="card">
@@ -10,6 +11,7 @@
                 <label for="anggota_yang_hadir" class="form-label">Jumlah Anggota Yang Hadir:</label>
                 <div class="input-group">
                 <input type="number" class="form-control" name="anggota_yang_hadir" id="anggota_yang_hadir" placeholder="Masukkan Jumlah Anggota Members Yang Hadir" required>
+
                 <div class="invalid-feedback">
                     Masukkan jumlah anggota yang hadir.
                 </div>
@@ -49,6 +51,7 @@
            
        
  
+
 
     <!-- Include Bootstrap JS and its dependencies -->
 

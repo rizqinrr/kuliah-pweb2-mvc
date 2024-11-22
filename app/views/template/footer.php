@@ -21,6 +21,7 @@
             });
         })();
     </script>
+
     <script>
   // Ambil semua elemen link
   const links = document.querySelectorAll('.nav-item a');
@@ -36,6 +37,7 @@
     }
   });
 </script>
+
 
 </body>
 </html>

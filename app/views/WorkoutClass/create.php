@@ -1,5 +1,6 @@
 
 <body>
+
     <div class="container mt-2">
             <div class="card">
         <div class="card-header">
@@ -10,15 +11,19 @@
             <div class="mb-3">
                 <label for="nama_kelas" class="form-label">Nama Kelas:</label>
                 <input type="text" name="nama_kelas" id="nama_kelas" class="form-control" placeholder="Masukkan Nama Kelas" required>
+
+
             </div>
             <div class="mb-3">
                 <label for="waktu" class="form-label">Waktu:</label>
                 <input type="time" name="waktu" id="waktu" class="form-control" required>
             </div>
             <div class="mb-3">
+
                 <label for="id_pelatih" class="form-label">Nama Pelatih:</label>
                 <select class= "form-control" name="id_pelatih" id="id_pelatih" required>
                         <option value="" selected disabled>Pilih Pelatih</option>
+
                     <?php foreach ($pelatih as $index => $trainer): ?>
                         <option value="<?= $trainer['id_pelatih'] ?>"><?= $trainer['nama_pelatih']?></option>
                     <?php endforeach ?>
@@ -42,3 +47,4 @@
         </form>
     </div>
     </div>
+

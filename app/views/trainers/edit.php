@@ -4,13 +4,10 @@
     <div class="card">
         <div class="card-header">
         <h3 class="text-center">Edit Trainers</h3>
-        </div>
-        
-            
-       
-      
+        </div>   
 
     <div class="card-body">
+
         <form action="/trainers/update/<?php echo $trainers['id_pelatih']; ?>" method="POST" class="needs-validation" novalidate>
             <div class="mb-3">
                 <label for="nama_pelatih" class="form-label">Nama Pelatih:</label>
@@ -46,5 +43,6 @@
     </div>
     </div>
     </div>
+
 </body>
 </html>
