@@ -1,14 +1,17 @@
 
-
-
 <body>
-    <div class="container mt-5">
-        <h2 class="mb-4">Tambah Kehadiran Member</h2>
+<div class="container mt-2">
+    <div class="card">
+        <div class="card-header">
+        <h3 class="text-center">Tambah Kehadiran Member</h3>
+        </div>
         <form action="/attendance/store" method="POST" class="needs-validation" novalidate>
+        <div class="card-body">
             <div class="mb-3">
                 <label for="anggota_yang_hadir" class="form-label">Jumlah Anggota Yang Hadir:</label>
                 <div class="input-group">
-                <input type="number" class="form-control" name="anggota_yang_hadir" id="anggota_yang_hadir" required>
+                <input type="number" class="form-control" name="anggota_yang_hadir" id="anggota_yang_hadir" placeholder="Masukkan Jumlah Anggota Members Yang Hadir" required>
+
                 <div class="invalid-feedback">
                     Masukkan jumlah anggota yang hadir.
                 </div>
@@ -34,11 +37,21 @@
                     Masukkan ID kelas.
                 </div>
             </div>
-
-
+        </div>
+        <div class="card-footer text-body-secondary">
+        <div class="d-flex justify-content-between">
             <button type="submit" class="btn btn-outline-primary">Simpan</button>
-        </form>
+        <a href="/attendance/index" class="btn btn-outline-secondary">Kembali</a>
+            </div>
+           
+        </div>
+    </form>
     </div>
+</div>
+           
+       
+ 
+
 
     <!-- Include Bootstrap JS and its dependencies -->
 

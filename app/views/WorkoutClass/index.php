@@ -10,13 +10,15 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4">Jadwal Workout</h2>
-        <a href="/WorkoutClass/create" class="btn btn-primary mb-3">Tambahkan Jadwal</a>
+
+        <h2 class="mb-4 text-center">Jadwal Workout</h2>
+        <a href="/WorkoutClass/create" class="btn btn-outline-primary mb-3">Tambahkan Jadwal</a>
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead class="table-dark">
-                    <tr>
-                        <th>Nama Kelas</th>
+                    <tr class="text-center">
+                        <th>No</th>
+         <th>Nama Kelas</th>
                         <th>Waktu</th>
                         <th>ID Pelatih</th>
                         <th>Kuota</th>
@@ -24,20 +26,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($classes as $user): ?>
+
+                    <?php if (!empty($classes)): ?>
+                    <?php foreach ($classes as $index => $user): ?>
                         <tr>
+                            <td class="text-center"><?= $index + 1 ?></td>
                             <td><?= htmlspecialchars($user['nama_kelas']) ?></td>
                             <td><?= htmlspecialchars($user['waktu']) ?></td>
                             <td><?= htmlspecialchars($user['id_pelatih']) ?></td>
-                            <td><?= htmlspecialchars($user['kuota']) ?></td>
-                            <td>
+                            <td class="text-center"><?= htmlspecialchars($user['kuota']) ?></td>
+                            <td class="text-center">
                                 <a href="/WorkoutClass/edit/<?= $user['id_kelas']; ?>" class="btn btn-warning btn-sm">Edit</a>
                                 <a href="/WorkoutClass/delete/<?= $user['id_kelas']; ?>" 
                                    class="btn btn-danger btn-sm"
-                                   onclick="return confirm('Are you sure?')">Delete</a>
+                                   onclick="return confirm('Apakah Anda Yakin Akan Menghapus Data Ini ?')">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
+                    <?php else: ?>
+                    <tr>
+                        <td colspan="5" class="text-center">Tidak Ada Data Jadwal Workout</td>
+                    </tr>
+                    <?php endif; ?>
+
                 </tbody>
             </table>
         </div>

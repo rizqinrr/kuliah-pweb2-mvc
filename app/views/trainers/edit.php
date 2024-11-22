@@ -1,7 +1,13 @@
 
 <body>
-    <div class="container mt-5">
-        <h2 class="mb-4">Edit Trainers</h2>
+    <div class="container mt-2">
+    <div class="card">
+        <div class="card-header">
+        <h3 class="text-center">Edit Trainers</h3>
+        </div>   
+
+    <div class="card-body">
+
         <form action="/trainers/update/<?php echo $trainers['id_pelatih']; ?>" method="POST" class="needs-validation" novalidate>
             <div class="mb-3">
                 <label for="nama_pelatih" class="form-label">Nama Pelatih:</label>
@@ -24,11 +30,18 @@
                     Harap masukkan jadwal.
                 </div>
             </div>
+            
+            </div>
+            <div class="card-footer text-body-secondary">
             <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-outline-primary">Update</button>
-                <a href="/trainers/index" class="btn btn-outline-secondary">Back to List</a>
+                <a href="/trainers/index" class="btn btn-outline-secondary">Kembali</a>
             </div>
+            </div>
+        </div>
         </form>
+    </div>
+    </div>
     </div>
 
 </body>

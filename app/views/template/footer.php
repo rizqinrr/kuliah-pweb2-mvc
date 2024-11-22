@@ -21,6 +21,24 @@
             });
         })();
     </script>
+
+    <script>
+  // Ambil semua elemen link
+  const links = document.querySelectorAll('.nav-item a');
+  // Ambil URL halaman saat ini
+  const currentUrl = window.location.pathname;
+
+  // Loop melalui setiap link
+  links.forEach(link => {
+    // Jika href link sama dengan URL saat ini
+    if (link.getAttribute('href') === currentUrl) {
+      // Tambahkan kelas active
+      link.classList.add('active');
+    }
+  });
+</script>
+
+
 </body>
 </html>
 

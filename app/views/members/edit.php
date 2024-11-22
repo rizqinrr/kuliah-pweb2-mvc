@@ -19,7 +19,8 @@
                             <div class="mb-3">
                                 <label for="jenis_kelamin" class="form-label fw-bold">Jenis Kelamin</label>
                                 <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
-                                    <option value="">Pilih Jenis Kelamin</option>
+                                    <option value=""selected disabled>Pilih Jenis Kelamin</option>
+
                                     <option value="Laki-laki" <?= $member['jenis_kelamin'] == 'Laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
                                     <option value="Perempuan" <?= $member['jenis_kelamin'] == 'Perempuan' ? 'selected' : '' ?>>Perempuan</option>
                                 </select>
@@ -27,7 +28,8 @@
                             <div class="mb-3">
                                 <label for="paket_langganan" class="form-label fw-bold">Paket Langganan</label>
                                 <select class="form-select" id="paket_langganan" name="paket_langganan" required>
-                                    <option value="">Pilih Paket Langganan</option>
+                                    <option value=""selected disabled>Pilih Paket Langganan</option>
+
                                     <option value="Platinum" <?= $member['paket_langganan'] == 'Platinum' ? 'selected' : '' ?>>Platinum</option>
                                     <option value="Gold" <?= $member['paket_langganan'] == 'Gold' ? 'selected' : '' ?>>Gold</option>
                                     <option value="Silver" <?= $member['paket_langganan'] == 'Silver' ? 'selected' : '' ?>>Silver</option>

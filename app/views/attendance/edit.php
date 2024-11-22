@@ -1,12 +1,17 @@
 
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4">Edit Kehadiran Member</h2>
-        <form action="/attendance/update/<?php echo $attendance['id_attendance']; ?>" method="POST" class="needs-validation" novalidate>
+    <div class="card">
+        <div class="card-header">
+        <h3 class="text-center">Edit Kehadiran Member</h3>
+    </div>
+    <form action="/attendance/update/<?php echo $attendance['id_attendance']; ?>" method="POST" class="needs-validation" novalidate>
+    <div class="card-body">
             <!-- Input jumlah anggota yang hadir -->
             <div class="mb-3">
                 <label for="anggota_yang_hadir" class="form-label">Anggota Yang Hadir:</label>
-                <input type="number" class="form-control" id="anggota_yang_hadir" name="anggota_yang_hadir" 
+                <input type="number" class="form-control" id="anggota_yang_hadir" name="anggota_yang_hadir"  
+
                        value="<?php echo htmlspecialchars($attendance['anggota_yang_hadir']); ?>" required>
                 <div class="invalid-feedback">
                     Masukkan jumlah anggota yang hadir.
@@ -25,7 +30,9 @@
 
             <!-- Combobox untuk memilih kelas -->
             <div class="mb-3">
-                <label for="id_kelas" class="form-label">Kelas:</label>
+
+                <label for="id_kelas" class="form-label">Nama Kelas:</label>
+
                 <select class="form-control" id="id_kelas" name="id_kelas" required>
                     <option value="" disabled>Pilih Kelas</option>
                     <?php foreach ($classes as $class): ?>
@@ -42,11 +49,17 @@
 
 
             <!-- Tombol untuk submit atau kembali -->
+            
+        </div>
+        <div class="card-footer text-body-secondary">
             <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-outline-primary">Update</button>
-                <a href="/attendance/index" class="btn btn-outline-secondary">Back to List</a>
+                <a href="/attendance/index" class="btn btn-outline-secondary">Kembali</a>
             </div>
-        </form>
+        </div>
+    </form>
+                    </div>
+
     </div>
 </body>
 </html>
