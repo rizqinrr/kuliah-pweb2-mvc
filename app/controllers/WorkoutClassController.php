@@ -47,13 +47,35 @@ class WorkoutClassController {
         }
     }
 
-    // Process delete request
     public function delete($id_kelas) {
-        $deleted = $this->userModel->delete($id_kelas);
-        if ($deleted) {
-            header("Location: /WorkoutClass/index"); // Redirect to user list
+        
+        $isUseInAttendance = $this->userModel->checkIfWorkoutClassInAttendance($id_kelas);
+    
+        if ($isUseInAttendance > 0) {
+            
+            echo "
+            <script>
+                alert('Data tidak dapat dihapus karena terkait dengan tabel lain');
+                window.location.href = '/WorkoutClass/index';
+            </script>";
         } else {
-            echo "Failed to delete user.";
+            
+            $deleted = $this->userModel->delete($id_kelas);
+            if ($deleted) {
+                // Data berhasil dihapus
+                echo "
+                <script>
+                    alert('Data berhasil dihapus.');
+                    window.location.href = '/WorkoutClass/index';
+                </script>";
+            } else {
+                // Gagal menghapus data
+                echo "
+                <script>
+                    alert('Gagal menghapus data.');
+                    window.location.href = '/WorkoutClass/index';
+                </script>";
+            }
         }
     }
 }

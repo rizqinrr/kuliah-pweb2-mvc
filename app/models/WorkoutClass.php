@@ -55,4 +55,22 @@ class WorkoutClass {
         $stmt->bindParam(':id_kelas', $id_kelas);
         return $stmt->execute();
     }
+
+    public function checkIfWorkoutClassInAttendance($id_kelas) {
+        $query = "SELECT COUNT(*) FROM attendance WHERE id_kelas = :id_kelas";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id_kelas', $id_kelas, PDO::PARAM_INT);
+        $stmt->execute();
+
+        //ambil hasilnya
+        $count = $stmt->fetchColumn();
+
+        if($count > 0){
+            return 1;
+        }else{
+            return 0;
+
+    }
+    }
 }
