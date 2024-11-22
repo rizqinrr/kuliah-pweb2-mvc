@@ -44,7 +44,7 @@ class Members {
 
     // Delete Members by id_member
     public function delete($id_member) {
-        $query = "DELETE FROM Members WHERE id_member = :id_member";
+        $query = "DELETE FROM members WHERE id_member = :id_member";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id_member', $id_member);
         return $stmt->execute();
